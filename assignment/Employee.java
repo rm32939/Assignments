@@ -6,16 +6,17 @@ public class Employee extends Person{
 	protected String dept;
 	private department Dept;
 	
+	public Employee(String name, int empid) {
+		super(name);
+		this.empid=empid;
+	}
+	
+
 	public Employee(String name, address addr, int empid, department Dept )
 	{
 		super(name,addr);
 		this.empid=empid;
-		this.dept=dept;
-	}
-	
-	public Employee(String name, int empid) {
-		super(name);
-		this.empid=empid;
+		this.Dept=Dept;
 	}
 
 	public int getEmpid() {
@@ -26,8 +27,8 @@ public class Employee extends Person{
 		this.empid = empid;
 	}
 
-	public String getDept() {
-		return dept;
+	public department getDept() {
+		return Dept;
 	}
 
 	public void setDept(String dept) {

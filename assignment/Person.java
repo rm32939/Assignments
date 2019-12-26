@@ -23,6 +23,13 @@ public class Person  {
 	public String toString() {
 		return "Person [name=" + name + "]";
 	}
+	public address getAddr() {
+		return addr;
+	}
+	public void setAddr(address addr) {
+		this.addr = addr;
+	}
+	
 	
 	
 	

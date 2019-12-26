@@ -5,11 +5,12 @@ public class department {
 	
 
 		private String location;
-		
+		private String name;
 
-		public department(String location) {
+		public department(String name, String location) {
 			super();
 			this.location = location;
+			this.name=name;
 		}
 
 		public String getLocation() {
@@ -22,10 +23,14 @@ public class department {
 
 		
 
-		@Override
-		public String toString() {
-			return "department [location=" + location + "]";
-		} 
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 		
 		
 		
