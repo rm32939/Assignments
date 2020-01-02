@@ -1,10 +1,13 @@
 package jdbc;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 
 public class DBreader {
 
@@ -29,14 +32,35 @@ public class DBreader {
 			System.out.println("Connection failed"+e.getMessage());
 		}
 		
-		String sql = "select * from employees where last_name='King'";
+		try {
+			DatabaseMetaData dbmeta = con.getMetaData();
+			System.out.println(dbmeta.toString());
+			System.out.println(dbmeta.getDatabaseProductName());
+			System.out.println(dbmeta.getDatabaseMajorVersion());
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		String sql = "select first_name, last_name, employee_id from employees where last_name='King'";
 		try {
 			Statement st = con.createStatement();
 			
 			ResultSet rs = st.executeQuery(sql);
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int type = rsmd.getColumnType(3);
+			System.out.println(rsmd.getColumnTypeName(1));
+			if(type == Types.INTEGER)
+			{
+				System.out.println("Col has integer type");
+			}else if(type == Types.VARCHAR) {
+				System.out.println("Col is a String(VARCHAR)");
+			}else if(type == Types.NUMERIC) {
+				System.out.println("Col is of type numeric");
+			}
+			System.out.println(rsmd.getColumnTypeName(3));
 			
 			while(rs.next()) {
-				String id = rs.getString("employee_id");
+				int id = rs.getInt(3); 
 				String fname = rs.getString("first_name");
 				String lname = rs.getString("last_name");
 				System.out.println(id+":"+fname+":"+lname);
