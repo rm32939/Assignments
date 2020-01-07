@@ -1,0 +1,39 @@
+Day-12
+
+   conversion functions
+1. int(),float(),bool(),str()
+2. a=int(b)
+ia=int(stra[:2])
+3. listc=list(strb)
+4. things that are false: none,0,empty data struct,false
+5. in - to find if somethings there
+6. 'disney' in lista #to find if disney in lista  
+7. in and not in are membership operators
+8. bitwise operators - and,or,not,left shift(<<), right shift(>>)
+9. for i in range():
+10. for also has an else part
+11. fro functions: def function_name():
+12. Lets us return multiple values from the same function return 12,13,4
+13. a,b,c=funca()
+14. one can even return multiple datatypes at the same time.
+15. even if we return a value its not mandatory that we assign it to a variable during function call
+16. funcd(lb=100)--when we dont know what other arguements funcd has and we need to give just one arguement.
+17. for val in lista:
+	print(val,end=',') to print in one line instead of each word in a new line.
+18. ord('a')- returns the unicode or ascii value of 'a'.
+19. tuples are immutable
+20. x= 45,46,47 -- tuple
+21. func(a,b,c,*args)----to pass more arguements 
+22. __doc__ to print documentation
+23. decorators - inner functions
+24. higher order functions- functions which takeother functions as an arguement
+25. we can return a function. We can even make a list of functions.
+26. use the keyword global to use the specific variable
+27. non local---variable check how it works.
+28. sets
+29. dictionary---like maps in java
+30. this is also unordered
+31. 
+
+
+ 
